@@ -32,11 +32,12 @@ const statusTone: Record<string, string> = {
 const container = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.06 } },
-};
+} as const;
 const item = {
   hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 220, damping: 24 } },
-};
+  show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 220, damping: 24 } },
+} as const;
+
 
 export function Dashboard() {
   return (
