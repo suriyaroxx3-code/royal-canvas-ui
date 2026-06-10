@@ -1,0 +1,8 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { RoyalShell } from "@/components/royal-shell";
+import { Dashboard } from "@/components/dashboard";
+
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Regalia — Royal Operations Suite" }
