@@ -6,7 +6,11 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Regalia — Royal Operations Suite" },
-      { name: "description", content: "A premium, royal-themed SaaS dashboard prototype with refined components, micro-interactions, and accessibility." },
+      {
+        name: "description",
+        content:
+          "A premium, royal-themed SaaS dashboard prototype with refined components, micro-interactions, and accessibility.",
+      },
       { property: "og:title", content: "Regalia — Royal Operations Suite" },
       { property: "og:description", content: "A premium, royal-themed SaaS dashboard prototype." },
     ],

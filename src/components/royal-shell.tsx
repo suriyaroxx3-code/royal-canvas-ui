@@ -59,7 +59,9 @@ export function RoyalShell({ children }: { children: React.ReactNode }) {
         </nav>
         <div className="m-4 rounded-xl border border-gold/30 bg-sidebar-accent/40 p-4">
           <p className="font-display text-sm text-gold">Ascend to Imperial</p>
-          <p className="mt-1 text-xs text-sidebar-foreground/70">Unlock advanced courtly analytics and unlimited heralds.</p>
+          <p className="mt-1 text-xs text-sidebar-foreground/70">
+            Unlock advanced courtly analytics and unlimited heralds.
+          </p>
           <Button size="sm" className="mt-3 w-full bg-gold text-gold-foreground hover:bg-gold/90">
             Upgrade
           </Button>
@@ -72,7 +74,10 @@ export function RoyalShell({ children }: { children: React.ReactNode }) {
             <Crown className="size-5 text-primary" aria-hidden />
           </div>
           <div className="relative ml-auto hidden max-w-md flex-1 sm:block">
-            <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden />
+            <Search
+              className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
+              aria-hidden
+            />
             <input
               type="search"
               placeholder="Seek decrees, subjects, ledgers…"
@@ -85,7 +90,9 @@ export function RoyalShell({ children }: { children: React.ReactNode }) {
             <span className="absolute right-2 top-2 size-1.5 rounded-full bg-gold" aria-hidden />
           </Button>
           <div className="flex items-center gap-2 rounded-full bg-card px-2 py-1 ring-1 ring-border">
-            <div className="grid size-7 place-items-center rounded-full bg-royal-gradient text-[11px] font-semibold text-gold">EM</div>
+            <div className="grid size-7 place-items-center rounded-full bg-royal-gradient text-[11px] font-semibold text-gold">
+              EM
+            </div>
             <span className="pr-2 text-sm font-medium hidden sm:inline">Her Majesty</span>
           </div>
         </header>

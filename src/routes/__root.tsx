@@ -78,7 +78,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Regalia — The Royal Operations Suite" },
-      { name: "description", content: "A premium, royal-themed SaaS dashboard concept with refined components, micro-interactions, and accessible design." },
+      {
+        name: "description",
+        content:
+          "A premium, royal-themed SaaS dashboard concept with refined components, micro-interactions, and accessible design.",
+      },
       { name: "author", content: "Regalia" },
       { property: "og:title", content: "Regalia — The Royal Operations Suite" },
       { property: "og:description", content: "A premium, royal-themed SaaS dashboard concept." },
@@ -88,7 +92,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap",
+      },
       { rel: "stylesheet", href: appCss },
     ],
   }),

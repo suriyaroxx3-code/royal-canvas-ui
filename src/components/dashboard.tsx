@@ -38,7 +38,6 @@ const item = {
   show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 220, damping: 24 } },
 } as const;
 
-
 export function Dashboard() {
   return (
     <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -59,14 +58,18 @@ export function Dashboard() {
               Good morrow, <span className="text-gradient-gold">Your Majesty</span>
             </h1>
             <p className="mt-3 max-w-md text-sm text-royal-foreground/80">
-              Your realm prospers. Revenue is up 12.4% this fortnight, and three new decrees await your seal.
+              Your realm prospers. Revenue is up 12.4% this fortnight, and three new decrees await
+              your seal.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Button className="bg-gold text-gold-foreground hover:bg-gold/90 shadow-[var(--shadow-gold)]">
               <Plus className="size-4" /> New Decree
             </Button>
-            <Button variant="outline" className="border-gold/40 bg-transparent text-royal-foreground hover:bg-gold/10">
+            <Button
+              variant="outline"
+              className="border-gold/40 bg-transparent text-royal-foreground hover:bg-gold/10"
+            >
               <Sparkles className="size-4" /> Summon Insight
             </Button>
           </div>
@@ -99,7 +102,11 @@ export function Dashboard() {
                         : "bg-destructive/10 text-destructive ring-1 ring-destructive/30"
                     }`}
                   >
-                    {s.trend === "up" ? <ArrowUpRight className="size-3" /> : <ArrowDownRight className="size-3" />}
+                    {s.trend === "up" ? (
+                      <ArrowUpRight className="size-3" />
+                    ) : (
+                      <ArrowDownRight className="size-3" />
+                    )}
                     {s.delta}
                   </span>
                 </div>
@@ -115,11 +122,17 @@ export function Dashboard() {
           <CardHeader className="flex flex-row items-center justify-between">
             <div>
               <CardTitle className="font-display text-xl">Treasury Flow</CardTitle>
-              <p className="text-xs text-muted-foreground mt-1">Revenue vs. expenses across the realm</p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Revenue vs. expenses across the realm
+              </p>
             </div>
             <div className="flex gap-2 text-xs">
-              <span className="inline-flex items-center gap-1.5"><span className="size-2 rounded-full bg-primary" /> Revenue</span>
-              <span className="inline-flex items-center gap-1.5"><span className="size-2 rounded-full bg-gold" /> Expenses</span>
+              <span className="inline-flex items-center gap-1.5">
+                <span className="size-2 rounded-full bg-primary" /> Revenue
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <span className="size-2 rounded-full bg-gold" /> Expenses
+              </span>
             </div>
           </CardHeader>
           <CardContent>
@@ -137,8 +150,19 @@ export function Dashboard() {
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.9 0.02 285)" />
-                  <XAxis dataKey="month" stroke="oklch(0.48 0.04 280)" fontSize={12} tickLine={false} axisLine={false} />
-                  <YAxis stroke="oklch(0.48 0.04 280)" fontSize={12} tickLine={false} axisLine={false} />
+                  <XAxis
+                    dataKey="month"
+                    stroke="oklch(0.48 0.04 280)"
+                    fontSize={12}
+                    tickLine={false}
+                    axisLine={false}
+                  />
+                  <YAxis
+                    stroke="oklch(0.48 0.04 280)"
+                    fontSize={12}
+                    tickLine={false}
+                    axisLine={false}
+                  />
                   <Tooltip
                     contentStyle={{
                       background: "white",
@@ -147,8 +171,20 @@ export function Dashboard() {
                       fontSize: 12,
                     }}
                   />
-                  <Area type="monotone" dataKey="revenue" stroke="oklch(0.32 0.13 295)" strokeWidth={2} fill="url(#rev)" />
-                  <Area type="monotone" dataKey="expenses" stroke="oklch(0.78 0.13 82)" strokeWidth={2} fill="url(#exp)" />
+                  <Area
+                    type="monotone"
+                    dataKey="revenue"
+                    stroke="oklch(0.32 0.13 295)"
+                    strokeWidth={2}
+                    fill="url(#rev)"
+                  />
+                  <Area
+                    type="monotone"
+                    dataKey="expenses"
+                    stroke="oklch(0.78 0.13 82)"
+                    strokeWidth={2}
+                    fill="url(#exp)"
+                  />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
@@ -165,7 +201,11 @@ export function Dashboard() {
               {activities.map((a, i) => (
                 <li key={i} className="flex gap-3">
                   <div className="grid size-9 shrink-0 place-items-center rounded-full bg-royal-gradient text-[11px] font-semibold text-gold">
-                    {a.who.split(" ").map((p) => p[0]).slice(0, 2).join("")}
+                    {a.who
+                      .split(" ")
+                      .map((p) => p[0])
+                      .slice(0, 2)
+                      .join("")}
                   </div>
                   <div className="min-w-0">
                     <p className="text-sm">
@@ -187,9 +227,15 @@ export function Dashboard() {
           <CardHeader className="flex flex-row items-center justify-between">
             <div>
               <CardTitle className="font-display text-xl">Royal Decrees</CardTitle>
-              <p className="text-xs text-muted-foreground mt-1">Latest motions awaiting your attention</p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Latest motions awaiting your attention
+              </p>
             </div>
-            <Button variant="outline" size="sm" className="border-gold/40 text-foreground hover:bg-gold/10">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-gold/40 text-foreground hover:bg-gold/10"
+            >
               View ledger
             </Button>
           </CardHeader>
@@ -197,21 +243,38 @@ export function Dashboard() {
             <Table>
               <TableHeader>
                 <TableRow className="border-border/60">
-                  <TableHead className="text-xs uppercase tracking-[0.12em] text-muted-foreground">ID</TableHead>
-                  <TableHead className="text-xs uppercase tracking-[0.12em] text-muted-foreground">Title</TableHead>
-                  <TableHead className="text-xs uppercase tracking-[0.12em] text-muted-foreground">Steward</TableHead>
-                  <TableHead className="text-xs uppercase tracking-[0.12em] text-muted-foreground">Status</TableHead>
-                  <TableHead className="text-xs uppercase tracking-[0.12em] text-muted-foreground text-right">Filed</TableHead>
+                  <TableHead className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
+                    ID
+                  </TableHead>
+                  <TableHead className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
+                    Title
+                  </TableHead>
+                  <TableHead className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
+                    Steward
+                  </TableHead>
+                  <TableHead className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
+                    Status
+                  </TableHead>
+                  <TableHead className="text-xs uppercase tracking-[0.12em] text-muted-foreground text-right">
+                    Filed
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {decrees.map((d) => (
-                  <TableRow key={d.id} className="border-border/60 transition-colors hover:bg-accent/40">
-                    <TableCell className="font-mono text-xs text-muted-foreground">{d.id}</TableCell>
+                  <TableRow
+                    key={d.id}
+                    className="border-border/60 transition-colors hover:bg-accent/40"
+                  >
+                    <TableCell className="font-mono text-xs text-muted-foreground">
+                      {d.id}
+                    </TableCell>
                     <TableCell className="font-medium">{d.title}</TableCell>
                     <TableCell className="text-muted-foreground">{d.owner}</TableCell>
                     <TableCell>
-                      <Badge className={statusTone[d.status]} variant="outline">{d.status}</Badge>
+                      <Badge className={statusTone[d.status]} variant="outline">
+                        {d.status}
+                      </Badge>
                     </TableCell>
                     <TableCell className="text-right text-muted-foreground">{d.date}</TableCell>
                   </TableRow>
