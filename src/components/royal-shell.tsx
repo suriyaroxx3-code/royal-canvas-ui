@@ -1,10 +1,21 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { Crown, LayoutDashboard, Scroll, Users, Coins, Settings, Search, Bell } from "lucide-react";
+import {
+  Crown,
+  LayoutDashboard,
+  Scroll,
+  Users,
+  Coins,
+  Settings,
+  Search,
+  Bell,
+  LineChart,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
   { to: "/", label: "Throne Room", icon: LayoutDashboard },
+  { to: "/analytics", label: "Academy Analytics", icon: LineChart },
   { to: "/decrees", label: "Decrees", icon: Scroll },
   { to: "/court", label: "Court", icon: Users },
   { to: "/treasury", label: "Treasury", icon: Coins },
