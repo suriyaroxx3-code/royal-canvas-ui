@@ -77,15 +77,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Regalia — The Royal Operations Suite" },
+      { title: "Dvein SkillHub — Enterprise Learning Platform" },
       {
         name: "description",
         content:
-          "A premium, royal-themed SaaS dashboard concept with refined components, micro-interactions, and accessible design.",
+          "AI-powered LMS, internship management, placement readiness, and skill development — built for enterprise.",
       },
-      { name: "author", content: "Regalia" },
-      { property: "og:title", content: "Regalia — The Royal Operations Suite" },
-      { property: "og:description", content: "A premium, royal-themed SaaS dashboard concept." },
+      { name: "author", content: "Dvein SkillHub" },
+      { property: "og:title", content: "Dvein SkillHub — Enterprise Learning Platform" },
+      { property: "og:description", content: "AI-powered enterprise LMS, placements & skill development." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -94,7 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
       },
       { rel: "stylesheet", href: appCss },
     ],
