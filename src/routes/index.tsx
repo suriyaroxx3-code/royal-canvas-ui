@@ -5,14 +5,14 @@ import { Dashboard } from "@/components/dashboard";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Regalia — Royal Operations Suite" },
+      { title: "Dashboard — Dvein SkillHub" },
       {
         name: "description",
         content:
-          "A premium, royal-themed SaaS dashboard prototype with refined components, micro-interactions, and accessibility.",
+          "Enterprise dashboard for Dvein SkillHub — AI-powered LMS, placements, and skill development.",
       },
-      { property: "og:title", content: "Regalia — Royal Operations Suite" },
-      { property: "og:description", content: "A premium, royal-themed SaaS dashboard prototype." },
+      { property: "og:title", content: "Dashboard — Dvein SkillHub" },
+      { property: "og:description", content: "Enterprise LMS dashboard with AI insights." },
     ],
   }),
   component: Index,
