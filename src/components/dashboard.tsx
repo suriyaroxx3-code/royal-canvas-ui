@@ -31,6 +31,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { stats, revenueSeries, decrees, activities } from "@/lib/mock-data";
+import { useAssistant } from "@/lib/assistant-context";
 
 const statusTone: Record<string, string> = {
   Active: "bg-success/10 text-success ring-1 ring-success/25",
@@ -51,6 +52,8 @@ const item = {
 } as const;
 
 export function Dashboard() {
+  const { openAssistant } = useAssistant();
+
   return (
     <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Header */}
@@ -73,7 +76,7 @@ export function Dashboard() {
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
-          <Button variant="outline" className="h-9 gap-2 text-xs">
+          <Button variant="outline" className="h-9 gap-2 text-xs" onClick={openAssistant}>
             <Sparkles className="size-3.5 text-electric" /> Ask AI
           </Button>
           <Button className="h-9 gap-2 text-xs bg-foreground text-background hover:bg-foreground/90">
@@ -133,7 +136,9 @@ export function Dashboard() {
         <Card className="lg:col-span-2 border-border/80 shadow-soft">
           <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-3">
             <div>
-              <CardTitle className="font-display text-base font-semibold">Enrollment & Completion</CardTitle>
+              <CardTitle className="font-display text-base font-semibold">
+                Enrollment & Completion
+              </CardTitle>
               <p className="text-xs text-muted-foreground mt-1">
                 Last 9 months · across all programs
               </p>
@@ -162,8 +167,19 @@ export function Dashboard() {
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.92 0.006 250)" />
-                  <XAxis dataKey="month" stroke="oklch(0.5 0.02 255)" fontSize={11} tickLine={false} axisLine={false} />
-                  <YAxis stroke="oklch(0.5 0.02 255)" fontSize={11} tickLine={false} axisLine={false} />
+                  <XAxis
+                    dataKey="month"
+                    stroke="oklch(0.5 0.02 255)"
+                    fontSize={11}
+                    tickLine={false}
+                    axisLine={false}
+                  />
+                  <YAxis
+                    stroke="oklch(0.5 0.02 255)"
+                    fontSize={11}
+                    tickLine={false}
+                    axisLine={false}
+                  />
                   <Tooltip
                     contentStyle={{
                       background: "white",
@@ -173,8 +189,20 @@ export function Dashboard() {
                       boxShadow: "0 8px 24px -12px rgba(0,0,0,0.12)",
                     }}
                   />
-                  <Area type="monotone" dataKey="enrollments" stroke="oklch(0.36 0.16 270)" strokeWidth={2} fill="url(#g1)" />
-                  <Area type="monotone" dataKey="completions" stroke="oklch(0.66 0.19 245)" strokeWidth={2} fill="url(#g2)" />
+                  <Area
+                    type="monotone"
+                    dataKey="enrollments"
+                    stroke="oklch(0.36 0.16 270)"
+                    strokeWidth={2}
+                    fill="url(#g1)"
+                  />
+                  <Area
+                    type="monotone"
+                    dataKey="completions"
+                    stroke="oklch(0.66 0.19 245)"
+                    strokeWidth={2}
+                    fill="url(#g2)"
+                  />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
@@ -191,7 +219,11 @@ export function Dashboard() {
               {activities.map((a, i) => (
                 <li key={i} className="flex gap-3">
                   <div className="grid size-8 shrink-0 place-items-center rounded-full bg-accent text-[10px] font-semibold text-electric ring-1 ring-electric/20">
-                    {a.who.split(" ").map((p) => p[0]).slice(0, 2).join("")}
+                    {a.who
+                      .split(" ")
+                      .map((p) => p[0])
+                      .slice(0, 2)
+                      .join("")}
                   </div>
                   <div className="min-w-0">
                     <p className="text-sm leading-snug">
@@ -218,13 +250,20 @@ export function Dashboard() {
               <div>
                 <p className="text-sm font-semibold">AI Insight · Dropout risk detected</p>
                 <p className="text-xs text-muted-foreground mt-0.5">
-                  12 students in <span className="font-medium text-foreground">Data Science · Q4</span> show declining engagement. Recommend a re-engagement nudge.
+                  12 students in{" "}
+                  <span className="font-medium text-foreground">Data Science · Q4</span> show
+                  declining engagement. Recommend a re-engagement nudge.
                 </p>
               </div>
             </div>
             <div className="flex gap-2">
-              <Button variant="outline" size="sm" className="h-8 text-xs">Dismiss</Button>
-              <Button size="sm" className="h-8 text-xs bg-electric text-electric-foreground hover:bg-electric/90">
+              <Button variant="outline" size="sm" className="h-8 text-xs">
+                Dismiss
+              </Button>
+              <Button
+                size="sm"
+                className="h-8 text-xs bg-electric text-electric-foreground hover:bg-electric/90"
+              >
                 Review students
               </Button>
             </div>
@@ -238,9 +277,7 @@ export function Dashboard() {
           <CardHeader className="flex flex-row items-center justify-between pb-3">
             <div>
               <CardTitle className="font-display text-base font-semibold">Active Batches</CardTitle>
-              <p className="text-xs text-muted-foreground mt-1">
-                Cohorts running across programs
-              </p>
+              <p className="text-xs text-muted-foreground mt-1">Cohorts running across programs</p>
             </div>
             <Button variant="outline" size="sm" className="h-8 text-xs">
               View all
@@ -250,17 +287,32 @@ export function Dashboard() {
             <Table>
               <TableHeader>
                 <TableRow className="border-border/80 hover:bg-transparent">
-                  <TableHead className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground">ID</TableHead>
-                  <TableHead className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground">Program</TableHead>
-                  <TableHead className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground">Mentor</TableHead>
-                  <TableHead className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground">Status</TableHead>
-                  <TableHead className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground text-right">Updated</TableHead>
+                  <TableHead className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+                    ID
+                  </TableHead>
+                  <TableHead className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+                    Program
+                  </TableHead>
+                  <TableHead className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+                    Mentor
+                  </TableHead>
+                  <TableHead className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+                    Status
+                  </TableHead>
+                  <TableHead className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground text-right">
+                    Updated
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {decrees.map((d) => (
-                  <TableRow key={d.id} className="border-border/60 transition-colors hover:bg-accent/40">
-                    <TableCell className="font-mono text-[11px] text-muted-foreground">{d.id}</TableCell>
+                  <TableRow
+                    key={d.id}
+                    className="border-border/60 transition-colors hover:bg-accent/40"
+                  >
+                    <TableCell className="font-mono text-[11px] text-muted-foreground">
+                      {d.id}
+                    </TableCell>
                     <TableCell className="font-medium text-sm">{d.title}</TableCell>
                     <TableCell className="text-muted-foreground text-sm">{d.owner}</TableCell>
                     <TableCell>
@@ -268,7 +320,9 @@ export function Dashboard() {
                         {d.status}
                       </Badge>
                     </TableCell>
-                    <TableCell className="text-right text-muted-foreground text-sm">{d.date}</TableCell>
+                    <TableCell className="text-right text-muted-foreground text-sm">
+                      {d.date}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>

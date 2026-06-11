@@ -175,7 +175,7 @@ export function AnalyticsDashboard() {
         <Card className="border-border/60">
           <CardHeader>
             <CardTitle className="font-display text-xl">Skill Mastery</CardTitle>
-            <p className="text-xs text-muted-foreground mt-1">Cohort-wide average mastery</p>
+            <p className="text-xs text-muted-foreground mt-1">Course-wide average mastery</p>
           </CardHeader>
           <CardContent>
             <div className="h-56 w-full">
@@ -226,7 +226,7 @@ export function AnalyticsDashboard() {
           <CardHeader>
             <CardTitle className="font-display text-xl">Mentor Performance</CardTitle>
             <p className="text-xs text-muted-foreground mt-1">
-              Cohort size, average student progress, and engagement
+              Course size, average student progress, and engagement
             </p>
           </CardHeader>
           <CardContent className="px-0">
@@ -237,7 +237,7 @@ export function AnalyticsDashboard() {
                     Mentor
                   </TableHead>
                   <TableHead className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
-                    Cohort
+                    Course
                   </TableHead>
                   <TableHead className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
                     Students
@@ -260,7 +260,7 @@ export function AnalyticsDashboard() {
                     className="border-border/60 transition-colors hover:bg-accent/40"
                   >
                     <TableCell className="font-medium">{m.name}</TableCell>
-                    <TableCell className="text-muted-foreground">{m.cohort}</TableCell>
+                    <TableCell className="text-muted-foreground">{m.course}</TableCell>
                     <TableCell className="text-muted-foreground">{m.studentsCount}</TableCell>
                     <TableCell>
                       <div className="flex items-center gap-2">

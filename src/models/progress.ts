@@ -8,7 +8,7 @@ export type StudentStanding = "On Track" | "At Risk" | "Excelling" | "Behind";
 export interface MentorSummary {
   id: string;
   name: string;
-  cohort: string;
+  course: string;
   studentsCount: number;
   avgProgress: number;
   sessionsCompleted: number;

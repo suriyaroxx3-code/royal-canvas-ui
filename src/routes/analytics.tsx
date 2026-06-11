@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { RoyalShell } from "@/components/royal-shell";
-import { AnalyticsDashboard } from "@/components/analytics-dashboard";
+import { AnalyticsDashboard } from "@/components/ui/analytics-dashboard";
 
 export const Route = createFileRoute("/analytics")({
   head: () => ({

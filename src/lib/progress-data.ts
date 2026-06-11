@@ -34,8 +34,8 @@ export const skillBreakdown: SkillBreakdown[] = [
 export const mentors: MentorSummary[] = [
   {
     id: "MNT-001",
-    name: "Lady Adelaide",
-    cohort: "Treasury Apprentices",
+    name: "Suriya",
+    course: "AI/ML",
     studentsCount: 18,
     avgProgress: 74,
     sessionsCompleted: 142,
@@ -43,8 +43,8 @@ export const mentors: MentorSummary[] = [
   },
   {
     id: "MNT-002",
-    name: "Duke Cassian",
-    cohort: "Strategic Command",
+    name: "Nivas",
+    course: "Python",
     studentsCount: 22,
     avgProgress: 61,
     sessionsCompleted: 168,
@@ -52,8 +52,8 @@ export const mentors: MentorSummary[] = [
   },
   {
     id: "MNT-003",
-    name: "Dame Iris",
-    cohort: "Scholars of Law",
+    name: "Navin",
+    course: "Java",
     studentsCount: 15,
     avgProgress: 88,
     sessionsCompleted: 121,
@@ -61,8 +61,8 @@ export const mentors: MentorSummary[] = [
   },
   {
     id: "MNT-004",
-    name: "Sir Aldwin",
-    cohort: "Diplomatic Corps",
+    name: "Arsal",
+    course: "Software Testing",
     studentsCount: 19,
     avgProgress: 55,
     sessionsCompleted: 99,
@@ -70,12 +70,21 @@ export const mentors: MentorSummary[] = [
   },
   {
     id: "MNT-005",
-    name: "Lord Edric",
-    cohort: "Maritime Trade",
+    name: "Siddharaj",
+    course: "Web Development",
     studentsCount: 12,
     avgProgress: 69,
     sessionsCompleted: 87,
     satisfaction: 4.5,
+  },
+  {
+    id: "MNT-006",
+    name: "Yasik",
+    course: "DevOps",
+    studentsCount: 16,
+    avgProgress: 66,
+    sessionsCompleted: 104,
+    satisfaction: 4.7,
   },
 ];
 
@@ -83,8 +92,8 @@ export const studentProgress: StudentProgress[] = [
   {
     id: "STU-1042",
     name: "Elara Voss",
-    mentor: "Lady Adelaide",
-    course: "Royal Treasury Fundamentals",
+    mentor: "Suriya",
+    course: "AI/ML",
     progress: 92,
     standing: "Excelling",
     modulesCompleted: 11,
@@ -94,8 +103,8 @@ export const studentProgress: StudentProgress[] = [
   {
     id: "STU-1043",
     name: "Tomas Greer",
-    mentor: "Duke Cassian",
-    course: "Strategic Command Tactics",
+    mentor: "Nivas",
+    course: "Python",
     progress: 48,
     standing: "At Risk",
     modulesCompleted: 5,
@@ -105,8 +114,8 @@ export const studentProgress: StudentProgress[] = [
   {
     id: "STU-1044",
     name: "Bryn Sorel",
-    mentor: "Dame Iris",
-    course: "Foundations of Royal Law",
+    mentor: "Navin",
+    course: "Java",
     progress: 100,
     standing: "Excelling",
     modulesCompleted: 8,
@@ -116,8 +125,8 @@ export const studentProgress: StudentProgress[] = [
   {
     id: "STU-1045",
     name: "Wren Halloway",
-    mentor: "Sir Aldwin",
-    course: "Diplomatic Negotiation",
+    mentor: "Arsal",
+    course: "Software Testing",
     progress: 34,
     standing: "Behind",
     modulesCompleted: 3,
@@ -127,8 +136,8 @@ export const studentProgress: StudentProgress[] = [
   {
     id: "STU-1046",
     name: "Idris Calder",
-    mentor: "Lord Edric",
-    course: "Maritime Trade Law",
+    mentor: "Siddharaj",
+    course: "Web Development",
     progress: 70,
     standing: "On Track",
     modulesCompleted: 7,
@@ -138,8 +147,8 @@ export const studentProgress: StudentProgress[] = [
   {
     id: "STU-1047",
     name: "Marielle Shaw",
-    mentor: "Lady Adelaide",
-    course: "Royal Treasury Fundamentals",
+    mentor: "Yasik",
+    course: "DevOps",
     progress: 64,
     standing: "On Track",
     modulesCompleted: 7,
